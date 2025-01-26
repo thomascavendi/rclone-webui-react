@@ -10,7 +10,7 @@ command="$1"
 errors=0
 
 buildApp () {
-	npm install
+	npm install --legacy-peer-deps
 	npm run build
 	cd ..
 }
@@ -68,8 +68,8 @@ if [[ "$command" == "run" ]]; then
 	#statements
 	if [[ -e "$repoName"/build ]]; then
 		#statements
-  		#./rclone rcd --rc-serve --rc-user="$username" --rc-pass="$password" --rc-files="`pwd`/rclone-webui-react/build" -vv
-		./rclone rcd --rc-serve --rc-addr=":5572" --rc-user="admin" --rc-pass="pass" --rc-files="`pwd`/rclone-webui-react/build" -vv
+  		./rclone rcd --rc-serve --rc-user="$username" --rc-pass="$password" --rc-files="`pwd`/rclone-webui-react/build" -vv
+		#./rclone rcd --rc-serve --rc-addr=":5572" --rc-user="admin" --rc-pass="pass" --rc-files="`pwd`/rclone-webui-react/build" -vv
 	else
 		echo "Please run build first"
 	fi
