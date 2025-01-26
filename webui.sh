@@ -1,7 +1,7 @@
 #!/bin/bash
 
-username=''
-password=''
+username='admin'
+password='pass'
 
 repoName='rclone-webui-react'
 
